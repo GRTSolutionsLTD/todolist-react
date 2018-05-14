@@ -1,11 +1,15 @@
 import * as types from '../constants/ActionTypes'
 
-let nextTodoId = 0
-export const addTodo = text => {
+let nextTodoId = 5
+export const addTodo = st => {
   return {
     type: types.ADD_TODO,
     id: nextTodoId++,
-    text
+    task: st.inputTask,
+    done: false,
+    datef: st.inputDatef,
+    datel: st.inputDatel,
+    notes: st.inputNotes
   }
 }
 

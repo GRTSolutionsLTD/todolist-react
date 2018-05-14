@@ -5,8 +5,11 @@ const todo = (state = {}, action) => {
     case 'ADD_TODO':
       return {
         id: action.id,
-        text: action.text,
-        done: false
+        task: action.task,
+        done: false,
+        datef:action.datef,
+        datel:action.datel,
+        notes:action.notes
       }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
