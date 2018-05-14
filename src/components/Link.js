@@ -4,7 +4,7 @@ const Link = ({ active, children, onClick }) => {
   if (active) {
     return (
       <span>
-        {children}
+         {children} 
       </span>
     )
   }
@@ -17,7 +17,7 @@ const Link = ({ active, children, onClick }) => {
         onClick()
       }}
     >
-      {children}
+       {children} 
     </a>
   )
 }
