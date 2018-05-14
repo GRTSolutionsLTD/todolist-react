@@ -1,6 +1,5 @@
 import React from 'react'
 import Todo from './Todo'
-
 const TodoList = ({ todos, onTodoClick }) =>
   <table className="c-todo__list">
     <thead />
@@ -9,6 +8,7 @@ const TodoList = ({ todos, onTodoClick }) =>
       {/* {todos.map(function (movie) {
         return <Todo key={movie.id} {...movie} onClick={() => onTodoClick(movie.id)} />
       })} */}
+    
     </tbody>
   </table>
 
