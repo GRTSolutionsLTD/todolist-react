@@ -7,10 +7,11 @@ const todo = (state = {}, action) => {
         id: action.id,
         task: action.task,
         done: false,
-        datef:action.datef,
-        datel:action.datel,
-        notes:action.notes
+        datef: action.datef,
+        datel: action.datel,
+        notes: action.notes
       }
+
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -25,7 +26,7 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state =data, action) => {
+const todos = (state = data, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, todo(undefined, action)]

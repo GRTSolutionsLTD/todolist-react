@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import TodoFooter from '../components/TodoFooter'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
+import Pop from '../containers/Pop'
 
 const TodoPage = () => [
   <Helmet>
@@ -13,8 +14,9 @@ const TodoPage = () => [
   </Helmet>,
   <main className="p-todo">
     <h3 className="p-todo__title">Todo List</h3>
-    <AddTodo />
+    <AddTodo  />
     <VisibleTodoList />
+    <Pop show={false}/>
     <TodoFooter />
   </main>
 ]

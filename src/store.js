@@ -5,6 +5,7 @@ import thunkMiddleware from 'redux-thunk'
 import todos from './reducers/todos'
 import visibilityFilter from './reducers/visibilityFilter'
 import weatherReducer from './reducers/weatherReducer'
+import popupReducer  from './reducers/popupReducer'
 
 export function configureStore(history, initialState) {
 
@@ -12,6 +13,7 @@ export function configureStore(history, initialState) {
         todos,
         visibilityFilter,
         weatherReducer,
+        popupReducer,
         routing: routerReducer
     })
 

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions/todoActions'
+import { savePopUp, showPopUp } from '../actions/popupActions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
@@ -25,6 +26,12 @@ const mapDispatchToProps = dispatch => {
   return {
     onTodoClick: id => {
       dispatch(toggleTodo(id))
+    },
+    onShowPopup: isVisible => {
+      if (isVisible)
+        dispatch(showPopUp())
+      else
+        dispatch(savePopUp())
     }
   }
 }

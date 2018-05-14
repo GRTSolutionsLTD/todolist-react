@@ -1,10 +1,9 @@
 import React from 'react'
-import Pop  from './Pop'
 import todos from '../reducers/todos';
-const Todo = ({ onClick, done, task,datef,datel,notes }) =>
-  <tr> 
-    <td className="c-todo__list_item"
 
+const Todo = ({ onClick, done, task, datef, datel, notes,showPopup,savePopup }) =>
+  <tr>
+    <td className="c-todo__list_item"
       style={{
         textDecoration: done ? 'line-through' : 'none'
       }}
@@ -30,12 +29,14 @@ const Todo = ({ onClick, done, task,datef,datel,notes }) =>
     </td>
     <td className="c-todo__list_item">
       <span>
-        <input onClick={onClick} type="checkbox" checked={done}/>
-     
-      </span>
+        <input onClick={onClick} type="checkbox" checked={done} />
+      </span> 
     </td>
-    {!done &&<Pop Ndata={todos}/>} 
+    <button onClick={this.deteteClick}>delete</button> 
+    <button onClick={showPopup}>showPopup</button>
+    <button onClick={savePopup}>savePopup</button>
   </tr>
- 
+
 
 export default Todo
+
