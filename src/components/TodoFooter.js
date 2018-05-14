@@ -5,9 +5,9 @@ const TodoFooter = () =>
   <p>
     Show: <FilterLink filter="SHOW_ALL">All</FilterLink>
     {', '}
-    <FilterLink filter="SHOW_ACTIVE">Active</FilterLink>
+    <FilterLink filter="SHOW_ACTIVE">not done</FilterLink>
     {', '}
-    <FilterLink filter="SHOW_COMPLETED">Completed</FilterLink>
+    <FilterLink filter="SHOW_COMPLETED">done</FilterLink>
   </p>
 
 export default TodoFooter
