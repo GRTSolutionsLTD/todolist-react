@@ -27,6 +27,11 @@ const Todo = ({ onClick, done, task,datef,datel,notes }) =>
         {notes}
       </span>
     </td>
+    <td className="c-todo__list_item">
+      <span>
+        <input type="checkbox" checked={done}/>
+      </span>
+    </td>
   </tr>
 
 export default Todo
