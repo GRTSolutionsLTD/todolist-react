@@ -7,9 +7,9 @@ const Header = props =>
     <img src={logo} className="c-header__logo" alt="create-react-redux-app-logo" />
     <h2>Create React Redux App</h2>
     <p>
-      <a href="https://github.com/yingray/create-react-redux-app">
+      {/* <a href="https://github.com/yingray/create-react-redux-app">
         https://github.com/yingray/create-react-redux-app
-      </a>
+      </a> */}
     </p>
     <Navigation />
   </div>

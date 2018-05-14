@@ -6,6 +6,9 @@ const TodoList = ({ todos, onTodoClick }) =>
     <thead />
     <tbody>
       {todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />)}
+      {/* {todos.map(function (movie) {
+        return <Todo key={movie.id} {...movie} onClick={() => onTodoClick(movie.id)} />
+      })} */}
     </tbody>
   </table>
 

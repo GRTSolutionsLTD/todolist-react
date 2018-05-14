@@ -1,3 +1,5 @@
+import data from '../actions/TodoList.json';
+
 const todo = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -20,7 +22,7 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const todos = (state =data, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, todo(undefined, action)]

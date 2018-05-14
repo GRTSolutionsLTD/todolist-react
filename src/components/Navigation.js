@@ -6,6 +6,7 @@ const Navigation = ({ className, buttonClassName }) =>
     <Link className={buttonClassName} to="/">
       Home
     </Link>
+    {/* reduser  בלינק מקשרים ל */}
     <Link className={buttonClassName} to="todo">
       Todo
     </Link>

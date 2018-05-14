@@ -12,7 +12,7 @@ const TodoPage = () => [
     />
   </Helmet>,
   <main className="p-todo">
-    <h3 className="p-todo__title">Todo List - Sample Practice!</h3>
+    <h3 className="p-todo__title">Todo List</h3>
     <AddTodo />
     <VisibleTodoList />
     <TodoFooter />
