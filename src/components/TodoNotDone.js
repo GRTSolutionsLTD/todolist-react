@@ -1,17 +1,24 @@
 import React from 'react'
 import todos from '../reducers/todos';
-
-const TodoNotDone = ({ done, task, datef, datel, notes,deleteClick }) =>
+import { Table, Button } from 'reactstrap';
+// const TodoNotDone = ({ done,id, task, datef, datel, notes,deleteClick }) =>
+const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, savePopup, show, UpdateModal, deleteClick }) =>
   <tr>
+    <td className="c-todo__list_item">
+      <span>
+        {id}
+      </span>
+    </td>
     <td className="c-todo__list_item"
-      // style={{
-      //   textDecoration: done ? 'line-through' : 'none'
-      // }}
+    // style={{
+    //   textDecoration: done ? 'line-through' : 'none'
+    // }}
     >
       <span>
         {task}
       </span>
     </td>
+
     <td className="c-todo__list_item">
       <span>
         {datef}
@@ -29,10 +36,12 @@ const TodoNotDone = ({ done, task, datef, datel, notes,deleteClick }) =>
     </td>
     <td className="c-todo__list_item">
       <span>
-        <input  type="checkbox" checked={done} />
-      </span> 
+        <input type="checkbox" checked={done} />
+      </span>
     </td>
-    <button onClick={deleteClick} >delete</button> 
+    <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
+    <Button onClick={showPopup}>showPopup</Button>
+    <Button onClick={savePopup}>savePopup</Button>
   </tr>
 
 

@@ -26,6 +26,12 @@ export const toggleTodo = id => {
     id
   }
 }
+export const toggleShowTodoNum = () => {
+  return {
+    type: types.TOGGLE_TODONUM,
+  }
+}
+
 export const toggleShowTodo = () => ({
   type: types.TOGGLESHOW_TODO
 })

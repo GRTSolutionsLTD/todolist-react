@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
+import TodoShowNum from '../components/TodoShowNum'
 const HomePage = () => {
   const content = {
-    title: 'Welcome to CRRS-APP',
-    article: 'This project was bootstrapped with Create React App and Redux + SASS Structure.'
+    title: 'Welcome to Racheli & Meirav project',
+    article: 'the numbers task is:'
   }
 
   return [
@@ -14,6 +14,7 @@ const HomePage = () => {
     <main className="p-home">
       <h3 className="p-home__title">{content.title}</h3>
       <article className="p-home__article">{content.article}</article>
+      <TodoShowNum />
     </main>
   ]
 }

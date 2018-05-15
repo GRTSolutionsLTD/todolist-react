@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions/todoActions'
-
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class AddTodo extends React.Component {
   constructor(props) {
     super(props)
@@ -46,18 +46,27 @@ class AddTodo extends React.Component {
 
   render() {
     return (
-      <form className="c-todo__section" onSubmit={this.handleSubmit}>
-        <label>Task:</label>
-        <input placeholder="task" className="c-todo__input" type="text" onChange={this.handleChange} value={this.state.inputTask} />
-        <label>FromDate:</label>
-        <input placeholder="FromDate" className="c-todo__input" type="text" onChange={this.handleChange2} value={this.state.inputDatef} />
-        <label>ToDate:</label>
-        <input placeholder="ToDate" className="c-todo__input" type="text" onChange={this.handleChange3} value={this.state.inputDatel} />
-        <label>Notes:</label>
-        <input placeholder="Notes" className="c-todo__input" type="text" onChange={this.handleChange4} value={this.state.inputNotes} />
-        <button type="submit" >Add
-        </button>
-      </form>
+      <Form onSubmit={this.handleSubmit}>
+        <FormGroup>
+          <Label for="Task">Task</Label>
+          <Input type="text" name="Task" id="Task" placeholder="Task" onChange={this.handleChange} value={this.state.inputTask}/>
+        </FormGroup>
+        <FormGroup>
+          <Label for="FromDate">FromDate</Label>
+          <Input type="text" name="FromDate" id="FromDate" placeholder="FromDate" onChange={this.handleChange2} value={this.state.inputDatef}/>
+        </FormGroup>
+        <FormGroup>
+          <Label for="ToDate">ToDate</Label>
+          <Input type="text" name="ToDate" id="ToDate" placeholder="ToDate" onChange={this.handleChange3} value={this.state.inputDatel}/>
+        </FormGroup>
+        <FormGroup>
+          <Label for="Notes">Notes</Label>
+          <Input type="text" name="Notes" id="Notes" placeholder="Notes" onChange={this.handleChange4} value={this.state.inputNotes}/>
+        </FormGroup>
+       
+        <Button type="submit" >Add
+        </Button>
+      </Form>
     )
   }
 }
