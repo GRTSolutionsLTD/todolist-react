@@ -4,12 +4,11 @@ import { connect } from 'react-redux'
 //import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { bindActionCreators } from 'redux';
 import * as popupActions from './../actions/popupActions'
-import { Button,Modal,ModalBody,ModalFooter,ModalHeader } from 'reactstrap'
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 
 class Pop extends React.Component {
   constructor(props) {
     super(props);
-
     console.log("show", props.show);
     console.log("show 1", props.popupState.show);
     this.state = {
@@ -41,7 +40,7 @@ class Pop extends React.Component {
 
     return (
       <div style={this.props.popupState.show ? { display: 'block' } : { display: 'none' }}  >
-       <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
           <ModalBody>

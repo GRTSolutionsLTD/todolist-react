@@ -1,13 +1,15 @@
 import React from 'react'
 import todos from '../reducers/todos';
+import { Table } from 'reactstrap';
 
-const Todo = ({ onClick, done, task, datef, datel, notes,showPopup,savePopup,deleteClick }) =>
+const Todo = ({ onClick, done,id, task, datef, datel, notes,showPopup,savePopup,deleteClick }) =>
   <tr>
-    <td className="c-todo__list_item"
-      style={{
-        textDecoration: done ? 'line-through' : 'none'
-      }}
-    >
+     <td className="c-todo__list_item">
+      <span>
+        {id}
+      </span>
+    </td>
+    <td className="c-todo__list_item">
       <span>
         {task}
       </span>
