@@ -1,13 +1,28 @@
-import React from 'react'
-import FilterLink from '../containers/FilterLink'
+import { connect } from 'react-redux'
+import { toggleTodo, deleteTodo,toggleShowTodo} from '../actions/todoActions'
+// import { savePopUp, showPopUp } from '../actions/popupActions'
+import TodoNotDoneList from '../components/TodoNotDoneList'
+import TodoList from './TodoList';
 
-const TodoFooter = () =>
-  <p>
-    Show: <FilterLink filter="SHOW_ALL">All</FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_ACTIVE">not done</FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_COMPLETED">done</FilterLink>
-  </p>
+const GetShowTodoNotDoneList = (todos) => {
+  return todos
+}
+
+const mapStateToProps = state => {
+  return {
+    todos: GetShowTodoNotDoneList(state.todos)
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onShowTodoClick()
+    {
+      dispatch(toggleShowTodo())
+    }
+  }
+}
+
+const TodoFooter = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
 export default TodoFooter

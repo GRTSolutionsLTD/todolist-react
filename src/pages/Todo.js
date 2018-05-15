@@ -15,11 +15,10 @@ const TodoPage = () => [
   </Helmet>,
   <main className="p-todo">
     <h3 className="p-todo__title">Todo List</h3>
+    <TodoFooter />
     <AddTodo/>
     <VisibleTodoList />
     <VisibleTodoNotDoneList/> 
-    { <Pop show={false}/> }
-    {/* <TodoFooter /> */}
   </main>
 ]
 export default TodoPage

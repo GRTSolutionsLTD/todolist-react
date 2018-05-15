@@ -26,6 +26,10 @@ export const toggleTodo = id => {
     id
   }
 }
+export const toggleShowTodo = () => ({
+  type: types.TOGGLESHOW_TODO
+})
+
 export const deleteTodo = id => {
   return {
     type: types.DELETE_TODO,
