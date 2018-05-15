@@ -40,8 +40,8 @@ const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, s
       </span>
     </td>
     <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
-    <Button onClick={showPopup}>showPopup</Button>
-    <Button onClick={savePopup}>savePopup</Button>
+    <Button outline color="primary" onClick={showPopup}>showPopup</Button>
+    <Button outline color="primary" onClick={savePopup}>savePopup</Button>
   </tr>
 
 

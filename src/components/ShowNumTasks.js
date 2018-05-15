@@ -3,6 +3,6 @@ import Todo from './Todo'
 import { Table } from 'reactstrap';
 
 const ShowNumTasks = ({ todos }) =>
-  <div>{todos.length}</div>
+  <center><h1>{todos.length}</h1></center>
   
 export default ShowNumTasks

@@ -6,7 +6,7 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 import Pop from '../containers/Pop'
 import VisibleTodoNotDoneList from './../containers/VisibleTodoNotDoneList'
 
-const TodoPage = () => [
+const Add = () => [
   <Helmet>
     <meta
       name="description"
@@ -14,14 +14,9 @@ const TodoPage = () => [
     />
   </Helmet>,
   <main className="p-todo">
-    <h3 className="p-todo__title">Todo List</h3>
+    <h3 className="p-todo__title">Add to do</h3>
     {/* <TodoFooter /> */}
-    {/* <AddTodo/> */}
-    <h6>Tasks done</h6>
-    <VisibleTodoList />
-    <h6>Tasks not done</h6>
-    <VisibleTodoNotDoneList/> 
-    <Pop/>
+    <AddTodo/>
   </main>
 ]
-export default TodoPage
+export default Add
