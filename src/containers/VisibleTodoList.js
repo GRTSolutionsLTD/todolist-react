@@ -29,9 +29,9 @@ const mapDispatchToProps = dispatch => {
     },
     onShowPopup: isVisible => {
       if (isVisible)
-        dispatch(showPopUp())
+        dispatch(showPopUp(isVisible))
       else
-        dispatch(savePopUp())
+        dispatch(savePopUp(isVisible))
     }
   }
 }

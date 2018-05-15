@@ -16,7 +16,7 @@ const TodoPage = () => [
     <h3 className="p-todo__title">Todo List</h3>
     <AddTodo  />
     <VisibleTodoList />
-    <Pop show={false}/>
+    { <Pop show={false}/> }
     <TodoFooter />
   </main>
 ]

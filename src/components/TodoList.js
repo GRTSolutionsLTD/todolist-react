@@ -8,8 +8,6 @@ const TodoList = ({ todos, onTodoClick,onShowPopup }) =>
       {/* {todos.map(function (movie) {
         return <Todo key={movie.id} {...movie} onClick={() => onTodoClick(movie.id)} />
       })} */}
-    
     </tbody>
-  </table>
-
+</table>
 export default TodoList

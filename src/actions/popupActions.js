@@ -1,10 +1,15 @@
 
-export const showPopUp = () => ({
-  type: 'SHOW_POPUP'
-})
-export const savePopUp = () => ({
-  type: 'SAVE_POPUP'
-})
-
+export const showPopUp = isVisible =>{
+  return{
+  type: 'SHOW_POPUP',
+  isVisible
+  }
+}
+export const savePopUp = isVisible => {
+  return{
+  type: 'SAVE_POPUP',
+  isVisible
+  }
+}
 
 
