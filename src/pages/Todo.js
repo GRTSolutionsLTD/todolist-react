@@ -4,6 +4,7 @@ import TodoFooter from '../components/TodoFooter'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import Pop from '../containers/Pop'
+import VisibleTodoNotDoneList from './../containers/VisibleTodoNotDoneList'
 
 const TodoPage = () => [
   <Helmet>
@@ -14,10 +15,11 @@ const TodoPage = () => [
   </Helmet>,
   <main className="p-todo">
     <h3 className="p-todo__title">Todo List</h3>
-    <AddTodo  />
+    <AddTodo/>
     <VisibleTodoList />
+    <VisibleTodoNotDoneList/> 
     { <Pop show={false}/> }
-    <TodoFooter />
+    {/* <TodoFooter /> */}
   </main>
 ]
 export default TodoPage
