@@ -1,7 +1,7 @@
 import React from 'react'
 import todos from '../reducers/todos';
 
-const Todo = ({ onClick, done, task, datef, datel, notes,showPopup,savePopup }) =>
+const Todo = ({ onClick, done, task, datef, datel, notes,showPopup,savePopup,deleteClick }) =>
   <tr>
     <td className="c-todo__list_item"
       style={{
@@ -32,7 +32,7 @@ const Todo = ({ onClick, done, task, datef, datel, notes,showPopup,savePopup }) 
         <input onClick={onClick} type="checkbox" checked={done} />
       </span> 
     </td>
-    <button onClick={this.deteteClick}>delete</button> 
+    <button onClick={deleteClick}>delete</button> 
     <button onClick={showPopup}>showPopup</button>
     <button onClick={savePopup}>savePopup</button>
   </tr>

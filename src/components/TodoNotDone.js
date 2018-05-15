@@ -1,12 +1,12 @@
 import React from 'react'
 import todos from '../reducers/todos';
 
-const TodoNotDone = ({ done, task, datef, datel, notes }) =>
+const TodoNotDone = ({ done, task, datef, datel, notes,deleteClick }) =>
   <tr>
     <td className="c-todo__list_item"
-      style={{
-        textDecoration: done ? 'line-through' : 'none'
-      }}
+      // style={{
+      //   textDecoration: done ? 'line-through' : 'none'
+      // }}
     >
       <span>
         {task}
@@ -29,10 +29,10 @@ const TodoNotDone = ({ done, task, datef, datel, notes }) =>
     </td>
     <td className="c-todo__list_item">
       <span>
-        <input  type="checkbox" checked="false" />
+        <input  type="checkbox" checked={done} />
       </span> 
     </td>
-    <button >delete</button> 
+    <button onClick={deleteClick} >delete</button> 
   </tr>
 
 

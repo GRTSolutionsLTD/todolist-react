@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions/todoActions'
+import { toggleTodo,deleteTodo } from '../actions/todoActions'
 // import { savePopUp, showPopUp } from '../actions/popupActions'
 import TodoNotDoneList from '../components/TodoNotDoneList'
 
- const getVisibleTodos = (todos, filter) => {
+ const GetVisibleTodoNotDoneList = (todos, filter) => {
 //   switch (filter) {
 //   //  case 'SHOW_ALL':
 //   //  return todos
@@ -25,7 +25,7 @@ import TodoNotDoneList from '../components/TodoNotDoneList'
 
 const mapStateToProps = state => {
   return {
-    todos: getVisibleTodos(state.todos,undefined /*state.visibilityFilter*/)
+    todos: GetVisibleTodoNotDoneList(state.todos, undefined)
   }
 }
 
@@ -34,6 +34,9 @@ const mapDispatchToProps = dispatch => {
     onTodoClick: id => {
       dispatch(toggleTodo(id))
     },
+    onDeleteClick:id=>{
+      dispatch(deleteTodo(id))
+    }
     // onShowPopup: isVisible => {
     //   if (isVisible)
     //     dispatch(showPopUp(isVisible))
