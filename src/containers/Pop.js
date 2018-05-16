@@ -110,10 +110,7 @@ class Pop extends React.Component{
   {}
   render() {
     return (
-      // <div style={this.props.popupState.show ? { display: 'block' } : { display: 'none' }} >
       <div >
-        {/* <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>  */}
-        {/* {this.props.popupState.showModal && <Modal isOpen={this.toggle} className={this.props.className}> */}
         {this.props.popupState.showModal && <Modal isOpen={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Update to do</ModalHeader>
           <ModalBody>
@@ -134,11 +131,11 @@ class Pop extends React.Component{
                 <Label for="examplePassword">notes</Label>
                 <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValue} defaultValue={this.props.popupState.notes} />
               </FormGroup>
+              <center><Button  outline color="primary" onClick={this.toggle}>Update</Button></center>
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" >updata</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+        
           </ModalFooter>
         </Modal>}
       </div>
