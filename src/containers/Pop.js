@@ -67,27 +67,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import {savePopUp,UpdatePopUp} from './../actions/popupActions'
+import { savePopUp, UpdatePopUp } from './../actions/popupActions'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class Pop extends React.Component{
+class Pop extends React.Component {
 
   constructor(props) {
     super(props);
 
-    console.log("show", props.show);
-    console.log("show 1", props.popupState.show);
     this.state = {
-      show: props.show,
-      updatable: false,
-      name: props.name,
-      status: props.status,
-      text: "",
-      taskU:"",
-      datefU:"",
-      datelU:"",
-      noteU:"",
+      idU: '',
+      taskU: '',
+      datefU: '',
+      datelU: '',
+      noteU: '',
     }
+
     this.toggle = this.toggle.bind(this);
     this.ChangeValueT = this.ChangeValueT.bind(this)
     this.ChangeValueDS = this.ChangeValueDS.bind(this)
@@ -95,40 +90,54 @@ class Pop extends React.Component{
     this.ChangeValueN = this.ChangeValueN.bind(this)
   }
 
-  shouldComponentUpdate() {
+  componentWillUpdate(nextProps, nextState) {
+    if(nextProps.popupState.id!=nextState.idU){
+      this.setState({
+        idU: this.props.popupState.id,
+        taskU:this.props.popupState.task,
+        datefU:this.props.popupState.datef,
+        datelU:this.props.popupState.datel,
+        noteU:this.props.popupState.notes
+      });
+    }
+    
+
     return true
   }
   toggle() {
-    debugger
     this.props.dispatch(savePopUp(false));
     this.props.dispatch(UpdatePopUp(this.state));
   }
+
   onTodoChange(value) {
     this.setState({
       name: value
     });
   }
-  ChangeValueT(e)
-  {
+  ChangeValueT(e) {
+    /* this.setState({
+       idU: this.props.popupState.id,
+       taskU:this.props.popupState.task,
+       datefU:this.props.popupState.datef,
+       datelU:this.props.popupState.datel,
+       noteU:this.props.popupState.notes
+     });*/
     this.setState({
       taskU: e.target.value
     });
 
   }
-  ChangeValueDS(e)
-  {
+  ChangeValueDS(e) {
     this.setState({
       datefU: e.target.value
     });
   }
-  ChangeValueDF(e)
-  {
+  ChangeValueDF(e) {
     this.setState({
       datelU: e.target.value
     });
   }
-  ChangeValueN(e)
-  {
+  ChangeValueN(e) {
     this.setState({
       noteU: e.target.value
     });
@@ -156,11 +165,11 @@ class Pop extends React.Component{
                 <Label for="examplePassword">notes</Label>
                 <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValueN} defaultValue={this.props.popupState.notes} />
               </FormGroup>
-              <center><Button  outline color="primary" onClick={this.toggle}>Update</Button></center>
+              <center><Button outline color="primary" onClick={this.toggle}>Update</Button></center>
             </Form>
           </ModalBody>
           <ModalFooter>
-        
+
           </ModalFooter>
         </Modal>}
       </div>

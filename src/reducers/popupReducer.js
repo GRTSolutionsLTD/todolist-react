@@ -24,11 +24,12 @@
 import data from '../actions/TodoList.json';
 const initialState = {
     show: false,
-    showModal:false,
-    task:"",
-    datef:"",
-    datel:"",
-    notes:""
+    showModal: false,
+    id:"",
+    task: "",
+    datef: "",
+    datel: "",
+    notes: ""
 }
 // const popupReducer = (state =initialState, action){
 const popupReducer = (state = data, action) => {
@@ -37,15 +38,22 @@ const popupReducer = (state = data, action) => {
             return Object.assign({}, state, {
                 show: true,
                 showModal: true,
-                task:state[action.id].task,
-                datef:state[action.id].datef,
-                datel:state[action.id].datel,
-                notes:state[action.id].notes,
+                task: state[action.id].task,
+                datef: state[action.id].datef,
+                datel: state[action.id].datel,
+                notes: state[action.id].notes,
+                id:state[action.id].id,
             })
         case 'SAVE_POPUP':
             return Object.assign({}, state, {
                 showModal: false
             })
+        case 'UPDATE_POPUP':{
+            return Object.assign({}, state, {
+                showModal: false
+            })
+           
+        }
         case 'SHOW_MODAL':
             return Object.assign({}, state, {
                 showModal: true
@@ -55,7 +63,7 @@ const popupReducer = (state = data, action) => {
         // }
         default:
             return Object.assign({}, state, initialState)
-       
+
     }
 }
 // const popupReducer = (state = data, action) => {

@@ -1,4 +1,5 @@
 import data from '../actions/TodoList.json';
+import _ from 'lodash'
 
 const todo = (state = {}, action) => {
   switch (action.type) {
@@ -24,7 +25,8 @@ const todo = (state = {}, action) => {
     }
     case 'DELETE_TODO':
       {
-        return state.filter(i=>i.id!=action.id)
+        _.remove(state,{id:action.id});
+        return state;
       }
       case 'TOGGLESHOW_TODO':
       {

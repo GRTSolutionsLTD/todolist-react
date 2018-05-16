@@ -1,0 +1,42 @@
+.c-todo__section {
+	position: relative;
+	color: #666;
+	margin: 10px auto;
+	max-width: 600px;
+	padding: 10px;
+}
+.c-todo__input {
+	width: 100%;
+	border-radius: 2em;
+	padding: 10px 20px;
+}
+.c-todo {
+	&:focus {
+		border: solid 1px #A082D1;
+	}
+	&:hover {
+		color: #A082D1;
+		background-color: transparent;
+	}
+}
+.c-todo__icon {
+	position: absolute;
+	color: #ccc;
+	right: 0;
+	background-color: transparent;
+	border: 0;
+	line-height: 0;
+	width: 60px;
+	height: 40px;
+}
+.c-todo__list {
+	padding: 0 20px;
+}
+.c-todo_item {
+	margin: 0 auto;
+	height: 40px;
+	line-height: 40px;
+	border: solid 1px #ccc;
+	padding: 0 0px;
+	cursor: pointer;
+}
