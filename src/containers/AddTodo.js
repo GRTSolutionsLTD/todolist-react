@@ -64,8 +64,7 @@ class AddTodo extends React.Component {
           <Input type="text" name="Notes" id="Notes" placeholder="Notes" onChange={this.handleChange4} value={this.state.inputNotes}/>
         </FormGroup>
        
-        <Button type="submit" >Add
-        </Button>
+        <center><Button outline color="success" type="submit" >Add</Button></center>
       </Form>
     )
   }

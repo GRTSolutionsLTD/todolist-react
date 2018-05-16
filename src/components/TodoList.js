@@ -2,7 +2,7 @@ import React from 'react'
 import Todo from './Todo'
 import { Table } from 'reactstrap';
 
-const TodoList = ({ todos, onTodoClick, onShowPopup, onDeleteClick }) =>
+const TodoList = ({ todos, onDeleteClick, onShowPopup }) =>
   // className="c-todo__list"
   <Table striped>
     <thead>
@@ -16,7 +16,7 @@ const TodoList = ({ todos, onTodoClick, onShowPopup, onDeleteClick }) =>
       </tr>
     </thead>
     <tbody>
-      {todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} showPopup={() => onShowPopup(true)} savePopup={() => onShowPopup(false)} deleteClick={() => onDeleteClick(todo.id)} />)}
+      {todos.map(todo => <Todo key={todo.id} {...todo} onClick={() => onDeleteClick(todo.id)} showPopup={() => onShowPopup(true)} savePopup={() => onShowPopup(false)} deleteClick={() => onDeleteClick(todo.id)} />)}
       {/* {todos.map(function (movie) {
         return <Todo key={movie.id} {...movie} onClick={() => onTodoClick(movie.id)} />
       })} */}
