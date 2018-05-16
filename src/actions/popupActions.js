@@ -16,7 +16,7 @@
 export const showPopUp = (isVisible,id) =>{
   return{
   type: 'SHOW_POPUP',
-  isVisible,
+  isVisible:!isVisible,
   id
   }
 }

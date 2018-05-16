@@ -44,7 +44,7 @@ const popupReducer = (state = data, action) => {
             })
         case 'SAVE_POPUP':
             return Object.assign({}, state, {
-                show: false
+                showModal: false
             })
         case 'SHOW_MODAL':
             return Object.assign({}, state, {
