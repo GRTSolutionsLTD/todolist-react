@@ -83,8 +83,10 @@ class Pop extends React.Component{
       name: props.name,
       status: props.status,
       text: "",
-      modal: false,
-      modalShow:this.props.popupState.showModal,
+      taskU:"",
+      datefU:"",
+      datelU:"",
+      noteU:"",
     }
     this.toggle = this.toggle.bind(this);
   }
@@ -95,13 +97,44 @@ class Pop extends React.Component{
   toggle() {
     debugger
     this.props.dispatch(savePopUp(false));
+<<<<<<< HEAD
     this.props.dispatch(UpdatePopUp(this.state));
+=======
+>>>>>>> b4f137c85b2c0f72c95048b9369aef4f80fd3ff4
   }
   onTodoChange(value) {
     this.setState({
       name: value
     });
   }
+<<<<<<< HEAD
+=======
+  ChangeValueT(e)
+  {
+    this.setState({
+      taskU: e.target.value
+    });
+
+  }
+  ChangeValueDS(e)
+  {
+    this.setState({
+      datefU: e.target.value
+    });
+  }
+  ChangeValueDF(e)
+  {
+    this.setState({
+      datelU: e.target.value
+    });
+  }
+  ChangeValueN(e)
+  {
+    this.setState({
+      noteU: e.target.value
+    });
+  }
+>>>>>>> b4f137c85b2c0f72c95048b9369aef4f80fd3ff4
   render() {
     return (
       <div >
@@ -111,19 +144,19 @@ class Pop extends React.Component{
             <Form>
               <FormGroup>
                 <Label for="exampleEmail">task</Label>
-                <Input type="text" name="email" id="exampleEmail" onChange={this.ChangeValue} defaultValue={this.props.popupState.task} />
+                <Input type="text" name="email" id="exampleEmail" onChange={this.ChangeValueT} defaultValue={this.props.popupState.task} />
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">from date</Label>
-                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValue} defaultValue={this.props.popupState.datef} />
+                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValueDS} defaultValue={this.props.popupState.datef} />
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">to date</Label>
-                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValue} defaultValue={this.props.popupState.datel} />
+                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValueDF} defaultValue={this.props.popupState.datel} />
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">notes</Label>
-                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValue} defaultValue={this.props.popupState.notes} />
+                <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValueN} defaultValue={this.props.popupState.notes} />
               </FormGroup>
               <center><Button  outline color="primary" onClick={this.toggle}>Update</Button></center>
             </Form>
