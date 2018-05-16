@@ -2,7 +2,7 @@ import React from 'react'
 import todos from '../reducers/todos';
 import { Table, Button } from 'reactstrap';
 
-const Todo = ({ onClick, done, id, task, datef, datel, notes, showPopup, savePopup, deleteClick }) =>
+const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, showPopup, savePopup, deleteClick }) =>
   <tr>
     <td className="c-todo__list_item">
       <span>
@@ -34,7 +34,7 @@ const Todo = ({ onClick, done, id, task, datef, datel, notes, showPopup, savePop
         <input onClick={onClick} type="checkbox" checked={done} />
       </span>
     </td>
-    <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
+   {showDelete&& <Button outline color="primary" onClick={deleteClick}>delete</Button>}{' '}
     {/* <Button outline color="secondary" onClick={showPopup}>update</Button>{' '}
     <Button outline color="success" onClick={savePopup}>close</Button> */}
   </tr>

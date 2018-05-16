@@ -10,7 +10,8 @@ const GetShowTodoNotDoneList = (todos) => {
 
 const mapStateToProps = state => {
   return {
-    todos: GetShowTodoNotDoneList(state.todos)
+    todos: GetShowTodoNotDoneList(state.todos),
+    show:false
   }
 }
 
