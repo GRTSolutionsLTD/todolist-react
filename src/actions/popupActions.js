@@ -26,6 +26,14 @@ export const savePopUp = isVisible => {
   isVisible
   }
 }
+
+export const UpdatePopUp = State => {
+  return{
+  type: 'UPDATE_POPUP',
+  State
+  }
+}
+
 export const ShowModal = isVisible => {
   return{
   type: 'SHOW_MODAL',

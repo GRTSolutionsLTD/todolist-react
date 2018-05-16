@@ -67,7 +67,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import {savePopUp} from './../actions/popupActions'
+import {savePopUp,UpdatePopUp} from './../actions/popupActions'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Pop extends React.Component{
@@ -86,7 +86,6 @@ class Pop extends React.Component{
       modal: false,
       modalShow:this.props.popupState.showModal,
     }
-
     this.toggle = this.toggle.bind(this);
   }
 
@@ -96,18 +95,13 @@ class Pop extends React.Component{
   toggle() {
     debugger
     this.props.dispatch(savePopUp(false));
-  }
-  toggle1() {
-    // this.props.popupState.showModal:!this.props.popupState.showModal
-    // modalShow:!this.props.popupState.showModal
+    this.props.dispatch(UpdatePopUp(this.state));
   }
   onTodoChange(value) {
     this.setState({
       name: value
     });
   }
-  ChangeValue()
-  {}
   render() {
     return (
       <div >
