@@ -89,6 +89,10 @@ class Pop extends React.Component{
       noteU:"",
     }
     this.toggle = this.toggle.bind(this);
+    this.ChangeValueT = this.ChangeValueT.bind(this)
+    this.ChangeValueDS = this.ChangeValueDS.bind(this)
+    this.ChangeValueDF = this.ChangeValueDF.bind(this)
+    this.ChangeValueN = this.ChangeValueN.bind(this)
   }
 
   shouldComponentUpdate() {
@@ -97,18 +101,13 @@ class Pop extends React.Component{
   toggle() {
     debugger
     this.props.dispatch(savePopUp(false));
-<<<<<<< HEAD
     this.props.dispatch(UpdatePopUp(this.state));
-=======
->>>>>>> b4f137c85b2c0f72c95048b9369aef4f80fd3ff4
   }
   onTodoChange(value) {
     this.setState({
       name: value
     });
   }
-<<<<<<< HEAD
-=======
   ChangeValueT(e)
   {
     this.setState({
@@ -134,7 +133,6 @@ class Pop extends React.Component{
       noteU: e.target.value
     });
   }
->>>>>>> b4f137c85b2c0f72c95048b9369aef4f80fd3ff4
   render() {
     return (
       <div >
