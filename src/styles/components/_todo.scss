@@ -1,3 +1,5 @@
+
+
 .c-todo__section {
 	position: relative;
 	color: #666;
@@ -12,10 +14,10 @@
 }
 .c-todo {
 	&:focus {
-		border: solid 1px #A082D1;
+		border: solid 1px $color;
 	}
 	&:hover {
-		color: #A082D1;
+		color: $color;
 		background-color: transparent;
 	}
 }
@@ -34,9 +36,10 @@
 }
 .c-todo_item {
 	margin: 0 auto;
-	height: 40px;
-	line-height: 40px;
-	border: solid 1px #ccc;
+	height: 100px;
+	line-height: 100px;
+	border: solid 1px gray;
 	padding: 0 0px;
-	cursor: pointer;
+	cursor:pointer;
+	
 }

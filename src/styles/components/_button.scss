@@ -1,0 +1,20 @@
+/* BEM naming: component - button */
+.c-button
+{
+  display: inline-block;
+  color: red;
+  width: 150px;
+  height: 35px;
+  line-height: 35px;
+  @include my-border();
+  border-radius: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 10px;
+  background-color: #fff;
+  &:hover
+  {
+    background-color: $color;
+    color: #fff
+  }
+}

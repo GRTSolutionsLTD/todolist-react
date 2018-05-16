@@ -4,7 +4,7 @@ import Header from './Header'
 const App = ({ children }) =>
   <div>
     <Header />
-    <div>
+    <div className="c-todo">
       {children}
     </div>
   </div>
