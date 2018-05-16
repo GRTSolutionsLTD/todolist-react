@@ -67,10 +67,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import * as popupActions from './../actions/popupActions'
+import {savePopUp} from './../actions/popupActions'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class Pop extends React.Component {
+class Pop extends React.Component{
 
   constructor(props) {
     super(props);
@@ -94,13 +94,8 @@ class Pop extends React.Component {
     return true
   }
   toggle() {
-    alert(this.props.popupState.showModal)
-    this.setState({
-      // modal:!this.props.popupState.showModal
-      modal: !this.props.popupState.showModal,
-      modalShow: !this.props.popupState.showModal,
-    });
-   
+    debugger
+    this.props.dispatch(savePopUp(false));
   }
   toggle1() {
     // this.props.popupState.showModal:!this.props.popupState.showModal
@@ -116,11 +111,11 @@ class Pop extends React.Component {
   render() {
     return (
       // <div style={this.props.popupState.show ? { display: 'block' } : { display: 'none' }} >
-      <div toggle={this.toggle}>
+      <div >
         {/* <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>  */}
         {/* {this.props.popupState.showModal && <Modal isOpen={this.toggle} className={this.props.className}> */}
         {this.props.popupState.showModal && <Modal isOpen={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Update to do</ModalHeader>
           <ModalBody>
             <Form>
               <FormGroup>
@@ -142,7 +137,7 @@ class Pop extends React.Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle1}>updata</Button>{' '}
+            <Button color="primary" >updata</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>}
@@ -154,10 +149,7 @@ class Pop extends React.Component {
 
 Pop = connect(state => ({
   popupState: state.popupReducer
-}),
-  dispatch => ({
-    actions: bindActionCreators(popupActions, dispatch)
-  })
+})
 )(Pop)
 export default (Pop)
 
