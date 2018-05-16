@@ -9,9 +9,9 @@ const TodoNotDoneList = ({todos,onTodoClick,onShowPopup,isShowModal ,onupDate,on
   <tr>
     <th>#</th>
     <th>Task</th>
-    <th>From Date</th>
+    {/* <th>From Date</th>
     <th>To Date</th>
-    <th>Notes</th>
+    <th>Notes</th> */}
     <th>Done</th>
   </tr>
 </thead>

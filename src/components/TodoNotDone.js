@@ -19,7 +19,7 @@ const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, s
       </span>
     </td>
 
-    <td className="c-todo__list_item">
+    {/* <td className="c-todo__list_item">
       <span>
         {datef}
       </span>
@@ -33,7 +33,7 @@ const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, s
       <span>
         {notes}
       </span>
-    </td>
+    </td> */}
     <td className="c-todo__list_item">
       <span>
         <input type="checkbox" onClick={showPopup} checked={done} />
