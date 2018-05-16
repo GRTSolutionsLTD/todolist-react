@@ -14,7 +14,8 @@ const Add = () => [
     />
   </Helmet>,
   <main className="p-todo">
-    <h3 className="p-todo__title">Add to do</h3>
+    <h3 className="p-todo__title">Add to do list</h3>
+    
     {/* <TodoFooter /> */}
     <AddTodo/>
   </main>
