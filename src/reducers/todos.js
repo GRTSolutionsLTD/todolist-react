@@ -12,10 +12,16 @@ const todo = (state = {}, action) => {
         notes: action.notes
       }
 
-    case 'TOGGLE_TODO':
+    case 'TOGGLE_TODO':{
       if (state.id !== action.id) {
         return state
       }
+      else{
+      return Object.assign({}, state, {
+        done: false
+      })
+    }
+    }
     case 'DELETE_TODO':
       {
         return state.filter(i=>i.id!=action.id)

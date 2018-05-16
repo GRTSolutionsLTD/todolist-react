@@ -35,8 +35,8 @@ const Todo = ({ onClick, done, id, task, datef, datel, notes, showPopup, savePop
       </span>
     </td>
     <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
-    <Button outline color="secondary" onClick={showPopup}>update</Button>{' '}
-    <Button outline color="success" onClick={savePopup}>close</Button>
+    {/* <Button outline color="secondary" onClick={showPopup}>update</Button>{' '}
+    <Button outline color="success" onClick={savePopup}>close</Button> */}
   </tr>
 
 

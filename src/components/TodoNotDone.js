@@ -36,12 +36,12 @@ const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, s
     </td>
     <td className="c-todo__list_item">
       <span>
-        <input type="checkbox" checked={done} />
+        <input type="checkbox" onClick={showPopup} checked={done} />
       </span>
     </td>
     <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
-    <Button outline color="secondary" onClick={showPopup}>showPopup</Button>
-    <Button outline color="success"  onClick={savePopup}>savePopup</Button>
+    {/* <Button outline color="secondary" onClick={showPopup}>showPopup</Button>
+    <Button outline color="success"  onClick={savePopup}>savePopup</Button> */}
   </tr>
 
 
