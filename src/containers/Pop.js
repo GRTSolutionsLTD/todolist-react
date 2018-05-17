@@ -1,69 +1,3 @@
-// import React from 'react'
-// import { connect } from 'react-redux'
-// // import { AvForm, AvField } from 'availity-reactstrap-validation';
-// //import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-// import { bindActionCreators } from 'redux';
-// import * as popupActions from './../actions/popupActions'
-// import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-
-// class Pop extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     console.log("show", props.show);
-//     console.log("show 1", props.popupState.show);
-//     this.state = {
-//       show: props.show,
-//       updatable: false,
-//       name: props.name,
-//       status: props.status,
-//       text: "",
-//       modal: false
-//     }
-//     this.toggle = this.toggle.bind(this);
-//   }
-
-//   handleClick() {
-//     // this.props.actions.showPopUp();
-//   }
-//   toggle() {
-//     this.setState({
-//       modal: !this.state.modal
-//     });
-//   }
-
-//   onTodoChange(value) {
-//     this.setState({
-//       name: value
-//     });
-//   }
-//   render() {
-
-//     return (
-//       <div style={this.props.popupState.show ? { display: 'block' } : { display: 'none' }}  >
-//         <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-//         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-//           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-//           <ModalBody>
-//             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-//           </ModalBody>
-//           <ModalFooter>
-//             <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-//             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-//           </ModalFooter>
-//         </Modal>
-//       </div>
-//     );
-//   }
-// }
-// Pop = connect(state => ({
-//   popupState: state.popupReducer
-// }),
-//   dispatch => ({
-//     actions: bindActionCreators(popupActions, dispatch)
-//   })
-// )(Pop)
-// export default (Pop)
-
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -76,11 +10,12 @@ class Pop extends React.Component {
     super(props);
 
     this.state = {
-      idU: '',
-      taskU: '',
-      datefU: '',
-      datelU: '',
-      noteU: '',
+      id: '',
+      done:'',
+      task: '',
+      datef: '',
+      datel: '',
+      notes: '',
     }
 
     this.toggle = this.toggle.bind(this);
@@ -91,19 +26,35 @@ class Pop extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if(nextProps.popupState.id!=nextState.idU){
+    if(nextProps.popupState.id!=nextState.id){
       this.setState({
-        idU: this.props.popupState.id,
-        taskU:this.props.popupState.task,
-        datefU:this.props.popupState.datef,
-        datelU:this.props.popupState.datel,
-        noteU:this.props.popupState.notes
+        id: this.props.popupState.id,
+        task:this.props.popupState.task,
+        datef:this.props.popupState.datef,
+        datel:this.props.popupState.datel,
+        notes:this.props.popupState.notes,
+        done:this.props.popupState.done
       });
     }
     
 
     return true
   }
+
+  callApi(){
+    // Github fetch library : https://github.com/github/fetch
+    // Call the API page
+    fetch('https://www.reddit.com/r/reactjs.json')
+    .then((result) => {
+      // Get the result
+      // If we want text, call result.text()
+      return result.json();
+    }).then((jsonResult) => {
+      // Do something with the result
+      console.log(jsonResult);
+    })
+  }
+
   toggle() {
     this.props.dispatch(savePopUp(false));
     this.props.dispatch(UpdatePopUp(this.state));
@@ -115,31 +66,24 @@ class Pop extends React.Component {
     });
   }
   ChangeValueT(e) {
-    /* this.setState({
-       idU: this.props.popupState.id,
-       taskU:this.props.popupState.task,
-       datefU:this.props.popupState.datef,
-       datelU:this.props.popupState.datel,
-       noteU:this.props.popupState.notes
-     });*/
     this.setState({
-      taskU: e.target.value
+      task: e.target.value
     });
 
   }
   ChangeValueDS(e) {
     this.setState({
-      datefU: e.target.value
+      datef: e.target.value
     });
   }
   ChangeValueDF(e) {
     this.setState({
-      datelU: e.target.value
+      datel: e.target.value
     });
   }
   ChangeValueN(e) {
     this.setState({
-      noteU: e.target.value
+      note: e.target.value
     });
   }
   render() {
@@ -165,11 +109,11 @@ class Pop extends React.Component {
                 <Label for="examplePassword">notes</Label>
                 <Input type="text" name="text" id="examplePassword" onChange={this.ChangeValueN} defaultValue={this.props.popupState.notes} />
               </FormGroup>
-              <center><Button outline color="primary" onClick={this.toggle}>Update</Button></center>
+              <center><Button outline color="primary" onClick={this.toggle}>Update</Button>
+              <Button outline color="primary" onClick={() => this.callApi()}>Get Api</Button></center>
             </Form>
           </ModalBody>
           <ModalFooter>
-
           </ModalFooter>
         </Modal>}
       </div>

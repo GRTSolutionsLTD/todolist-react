@@ -9,39 +9,17 @@ const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, s
         {id}
       </span>
     </td>
-    <td className="c-todo__list_item"
-    // style={{
-    //   textDecoration: done ? 'line-through' : 'none'
-    // }}
-    >
+    <td className="c-todo__list_item">
       <span>
         {task}
       </span>
     </td>
-
-    {/* <td className="c-todo__list_item">
-      <span>
-        {datef}
-      </span>
-    </td>
-    <td className="c-todo__list_item">
-      <span>
-        {datel}
-      </span>
-    </td>
-    <td className="c-todo__list_item">
-      <span>
-        {notes}
-      </span>
-    </td> */}
     <td className="c-todo__list_item">
       <span>
         <input type="checkbox" onClick={showPopup} checked={done} />
       </span>
     </td>
     <Button outline color="primary" onClick={deleteClick}>delete</Button>{' '}
-    {/* <Button outline color="secondary" onClick={showPopup}>showPopup</Button>
-    <Button outline color="success"  onClick={savePopup}>savePopup</Button> */}
   </tr>
 
 

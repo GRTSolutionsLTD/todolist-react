@@ -4,23 +4,7 @@ import { savePopUp, showPopUp } from '../actions/popupActions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
-  // switch (filter) {
-  //  case 'SHOW_ALL':
-  //  return todos
-  // case 'SHOW_COMPLETED':
-  //   return todos.filter(t => t.done)
-  // case 'SHOW_ACTIVE':
   return todos.filter(t => t.done)
-  // default:
-  //   break
-
-  //     // case 'SHOW_COMPLETED':
-  //     //   return todos.filter(t => t.done)
-  //     // case 'SHOW_ACTIVE':
-  //     //   return todos.filter(t => !t.done)
-  //     // default:
-  //     //   break
-  // }
 }
 
 const mapStateToProps = state => {
