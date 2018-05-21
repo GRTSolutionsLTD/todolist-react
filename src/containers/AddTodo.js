@@ -11,24 +11,24 @@ class AddTodo extends React.Component {
       inputDatel: '',
       inputNotes: '',
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleChange2 = this.handleChange2.bind(this)
-    this.handleChange3 = this.handleChange3.bind(this)
-    this.handleChange4 = this.handleChange4.bind(this)
+    this.handleChangeTask = this.handleChangeTask.bind(this)
+    this.handleChangeDatef = this.handleChangeDatef.bind(this)
+    this.handleChangeDatel = this.handleChangeDatel.bind(this)
+    this.handleChangeNotes = this.handleChangeNotes.bind(this)
     
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e) {
+  handleChangeTask(e) {
     this.setState({ inputTask: e.target.value})
   }
-  handleChange2(e) {
+  handleChangeDatef(e) {
     this.setState({ inputDatef: e.target.value})
   }
-  handleChange3(e) {
+  handleChangeDatel(e) {
     this.setState({ inputDatel:e.target.value})
   }
-  handleChange4(e) {
+  handleChangeNotes(e) {
     this.setState({ inputNotes: e.target.value})
   }
 
@@ -49,19 +49,19 @@ class AddTodo extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <FormGroup>
           <Label for="Task">Task</Label>
-          <Input type="text" name="Task" id="Task" placeholder="Task" onChange={this.handleChange} value={this.state.inputTask}/>
+          <Input type="text" name="Task" id="Task" placeholder="Task" onChange={this.handleChangeTask} value={this.state.inputTask}/>
         </FormGroup>
         <FormGroup>
           <Label for="FromDate">FromDate</Label>
-          <Input type="text" name="FromDate" id="FromDate" placeholder="FromDate" onChange={this.handleChange2} value={this.state.inputDatef}/>
+          <Input type="text" name="FromDate" id="FromDate" placeholder="FromDate" onChange={this.handleChangeDatef} value={this.state.inputDatef}/>
         </FormGroup>
         <FormGroup>
           <Label for="ToDate">ToDate</Label>
-          <Input type="text" name="ToDate" id="ToDate" placeholder="ToDate" onChange={this.handleChange3} value={this.state.inputDatel}/>
+          <Input type="text" name="ToDate" id="ToDate" placeholder="ToDate" onChange={this.handleChangeDatel} value={this.state.inputDatel}/>
         </FormGroup>
         <FormGroup>
           <Label for="Notes">Notes</Label>
-          <Input type="text" name="Notes" id="Notes" placeholder="Notes" onChange={this.handleChange4} value={this.state.inputNotes}/>
+          <Input type="text" name="Notes" id="Notes" placeholder="Notes" onChange={this.handleChangeNotes} value={this.state.inputNotes}/>
         </FormGroup>
        
         <center><Button outline color="success" type="submit" >Add</Button></center>
