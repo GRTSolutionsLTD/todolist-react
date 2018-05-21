@@ -15,8 +15,6 @@ const TodoPage = () => [
   </Helmet>,
   <main className="p-todo">
     <h3 className="p-todo__title">Todo List</h3>
-    {/* <TodoFooter /> */}
-    {/* <AddTodo/> */}
     <h6>Tasks done</h6>
     <VisibleTodoList />
     <h6>Tasks not done</h6>

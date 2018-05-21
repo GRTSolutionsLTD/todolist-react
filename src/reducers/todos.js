@@ -13,22 +13,28 @@ const todo = (state = {}, action) => {
         notes: action.notes
       }
 
-    case 'TOGGLE_TODO':{
+    case 'TOGGLE_TODO': {
       if (state.id !== action.id) {
         return state
       }
-      else{
-      return Object.assign({}, state, {
-        done: false
-      })
-    }
+      else {
+        return Object.assign({}, state, {
+          done: false
+        })
+      }
     }
     case 'DELETE_TODO':
       {
-        _.remove(state,{id:action.id});
+        _.remove(state, { id: action.id });
         return state;
       }
-      case 'TOGGLESHOW_TODO':
+      case 'UPDATE_POPUP':
+      {
+        debugger;
+        _.setWith(state,'['+action.State.id+']'+'.done', true, state);
+        return _.setWith(state,'['+action.State.id+']', action.State, state);
+      }
+    case 'TOGGLESHOW_TODO':
       {
         return state
       }
@@ -57,7 +63,11 @@ const todos = (state = data, action) => {
       return todo(state, action)
     case 'TOGGLESHOW_TODO':
       return todo(state)
+<<<<<<< HEAD
       case 'UPDATE_POPUP':
+=======
+    case 'UPDATE_POPUP':
+>>>>>>> 2fd7e1beed68e72783417835ca38e1eb96fb9163
       return todo(state,action)
     default:
       return state
