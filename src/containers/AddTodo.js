@@ -63,7 +63,6 @@ class AddTodo extends React.Component {
           <Label for="Notes">Notes</Label>
           <Input type="text" name="Notes" id="Notes" placeholder="Notes" onChange={this.handleChangeNotes} value={this.state.inputNotes}/>
         </FormGroup>
-       
         <center><Button outline color="success" type="submit" >Add</Button></center>
       </Form>
     )
@@ -71,5 +70,4 @@ class AddTodo extends React.Component {
 }
 
 AddTodo = connect()(AddTodo)
-
 export default AddTodo
