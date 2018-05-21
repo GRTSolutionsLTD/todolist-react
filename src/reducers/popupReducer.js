@@ -1,27 +1,7 @@
 
-// const initialState = {
-//     show: false
-// }
-
-// const popupReducer = (state = initialState, action) => {
-//     switch (action.type) {
-//         case 'SHOW_POPUP':
-//             return Object.assign({}, state, {
-//                 show: true
-//             })
-
-//         case 'SAVE_POPUP':
-//             return Object.assign({}, state, {
-//                 show: true
-//             })
-
-//         default:
-//             return Object.assign({}, state, initialState)
-//     }
-// }
-
 // export default popupReducer
 import data from '../actions/TodoList.json';
+import _ from 'lodash'
 const initialState = {
     show: false,
     showModal: false,
@@ -43,16 +23,15 @@ const popupReducer = (state = data, action) => {
                 datel: state[action.id].datel,
                 notes: state[action.id].notes,
                 id:state[action.id].id,
+                done:state[action.id].done,
             })
         case 'SAVE_POPUP':
             return Object.assign({}, state, {
                 showModal: false
             })
-        case 'UPDATE_POPUP':{
-            return Object.assign({}, state, {
-                showModal: false
-            })
-           
+    
+        case 'TODO':{
+
         }
         case 'SHOW_MODAL':
             return Object.assign({}, state, {
@@ -66,18 +45,6 @@ const popupReducer = (state = data, action) => {
 
     }
 }
-// const popupReducer = (state = data, action) => {
-//     switch (action.type) {
-//     case 'UPDATE_MODAL':
-//         return [...state, popupreducer(state, action)]
-//     case 'SHOW_POPUP':
-//     return [...state, popupreducer(state, action)]
-//     case 'SHOW_MODAL':
-//     return [...state, popupreducer(state, action)]
-//     case 'SAVE_POPUP':
-//     return [...state, popupreducer(state, action)]
-//     }
-// }
 export default popupReducer
 
 

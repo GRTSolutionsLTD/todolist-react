@@ -34,6 +34,14 @@ export const UpdatePopUp = State => {
   }
 }
 
+export const Todo = State => {
+  return{
+  type: 'TODO',
+
+  }
+}
+
+
 export const ShowModal = isVisible => {
   return{
   type: 'SHOW_MODAL',

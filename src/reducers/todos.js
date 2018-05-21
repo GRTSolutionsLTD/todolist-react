@@ -32,6 +32,12 @@ const todo = (state = {}, action) => {
       {
         return state
       }
+      case 'UPDATE_POPUP':{
+        _.setWith(state, action.State.id , action.State, state);
+       
+        return state
+    
+    }
       return Object.assign({}, state, {
         done: !state.done
       })
@@ -51,6 +57,8 @@ const todos = (state = data, action) => {
       return todo(state, action)
     case 'TOGGLESHOW_TODO':
       return todo(state)
+      case 'UPDATE_POPUP':
+      return todo(state,action)
     default:
       return state
   }
