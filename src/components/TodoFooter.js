@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import { toggleTodo, deleteTodo,toggleShowTodo} from '../actions/todoActions'
-// import { savePopUp, showPopUp } from '../actions/popupActions'
 import TodoNotDoneList from '../components/TodoNotDoneList'
 import TodoList from './TodoList';
 

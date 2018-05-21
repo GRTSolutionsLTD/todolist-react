@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -91,9 +94,6 @@ class Pop extends React.Component {
   render() {
     return (
       <div >
-        {/* <button onClick={() => this.callApi()}>
-          Click here to call API
-      </button> */}
         {this.props.popupState.showModal && <Modal isOpen={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Update to do</ModalHeader>
           <ModalBody>
@@ -132,18 +132,3 @@ Pop = connect(state => ({
 })
 )(Pop)
 export default (Pop)
-
-
-
-
-
-// render() {
-//   return <div>
-//     <button onClick={() => this.callApi()}>
-//       Click here to call API
-//     </button>
-//   </div>;
-// }
-// }
-
-// React.render(<Application />, document.getElementById('app'));

@@ -2,8 +2,13 @@ import React from 'react'
 import todos from '../reducers/todos';
 import { Table, Button } from 'reactstrap';
 
+<<<<<<< HEAD
 const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, showPopup, deleteClick }) =>
   <tr >
+=======
+const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, deleteClick }) =>
+  <tr>
+>>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
     <td className="c-todo__list_item">
       <span>
         {id}
@@ -35,8 +40,6 @@ const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, showPop
       </span>
     </td>
    {showDelete&& <Button outline color="primary" onClick={deleteClick}>delete</Button>}{' '}
-    {/* <Button outline color="secondary" onClick={showPopup}>update</Button>{' '}
-    <Button outline color="success" onClick={savePopup}>close</Button> */}
   </tr>
 
 

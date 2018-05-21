@@ -28,21 +28,21 @@ const todo = (state = {}, action) => {
         _.remove(state, { id: action.id });
         return state;
       }
-      case 'UPDATE_POPUP':
+    case 'UPDATE_POPUP':
       {
         debugger;
-        _.setWith(state,'['+action.State.id+']'+'.done', true, state);
-        return _.setWith(state,'['+action.State.id+']', action.State, state);
+        _.setWith(state, '[' + action.State.id + ']' + '.done', true, state);
+        return _.setWith(state, '[' + action.State.id + ']', action.State, state);
       }
     case 'TOGGLESHOW_TODO':
       {
         return state
       }
-      case 'UPDATE_POPUP':{
-        _.setWith(state, action.State.id , action.State, state);
-       
-        return state
-    
+    case 'UPDATE_POPUP': {
+      _.setWith(state, action.State.id, action.State, state);
+
+      return state
+
     }
       return Object.assign({}, state, {
         done: !state.done
@@ -63,8 +63,13 @@ const todos = (state = data, action) => {
       return todo(state, action)
     case 'TOGGLESHOW_TODO':
       return todo(state)
+<<<<<<< HEAD
       case 'UPDATE_POPUP':
       return todo(state,action)
+=======
+    case 'UPDATE_POPUP':
+      return todo(state, action)
+>>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
     default:
       return state
   }
