@@ -63,13 +63,8 @@ const todos = (state = data, action) => {
       return todo(state, action)
     case 'TOGGLESHOW_TODO':
       return todo(state)
-<<<<<<< HEAD
-      case 'UPDATE_POPUP':
-      return todo(state,action)
-=======
     case 'UPDATE_POPUP':
       return todo(state, action)
->>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
     default:
       return state
   }

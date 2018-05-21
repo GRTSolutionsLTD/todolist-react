@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-// export default popupReducer
-=======
->>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
 import data from '../actions/TodoList.json';
 import _ from 'lodash'
 const initialState = {
@@ -33,16 +29,13 @@ const popupReducer = (state = data, action) => {
             })
     
         case 'TODO':{
-<<<<<<< HEAD
 
-=======
         }
         case 'UPDATE_POPUP':{
             debugger;
             return Object.assign({}, state, {
                 done: true
             })
->>>>>>> 2ea26214510911fadd05abb1892bcb62cf76f14e
         }
         case 'SHOW_MODAL':
             return Object.assign({}, state, {
