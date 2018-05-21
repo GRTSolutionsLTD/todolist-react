@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux'
 import { toggleTodo,deleteTodo } from '../actions/todoActions'
- import { savePopUp, showPopUp } from '../actions/popupActions'
+ import { showPopUp } from '../actions/popupActions'
  import {ShowModal} from '../actions/popupActions'
 import TodoNotDoneList from '../components/TodoNotDoneList'
 
@@ -22,10 +22,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(toggleTodo(id))
     },
     onShowPopup: (isVisible,id) => {
-      if (isVisible)
         dispatch(showPopUp(isVisible,id))
-      else
-        dispatch(savePopUp(isVisible))
+   
     },
     isShowModal :(isVisible) => {
       dispatch(ShowModal(true))
@@ -36,8 +34,5 @@ const mapDispatchToProps = dispatch => {
       }, 
   }
 }
-
 const VisibleTodoNotDoneList = connect(mapStateToProps, mapDispatchToProps)(TodoNotDoneList)
-
 export default VisibleTodoNotDoneList
-

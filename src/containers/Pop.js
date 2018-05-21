@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 2fd7e1beed68e72783417835ca38e1eb96fb9163
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -16,19 +13,11 @@ class Pop extends React.Component {
 
     this.state = {
       id: '',
-<<<<<<< HEAD
       task: '',
       datef: '',
       datel: '',
       note: '',
       done: ''
-=======
-      done:'',
-      task: '',
-      datef: '',
-      datel: '',
-      notes: '',
->>>>>>> 2fd7e1beed68e72783417835ca38e1eb96fb9163
     }
 
     this.toggle = this.toggle.bind(this);
@@ -39,7 +28,6 @@ class Pop extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-<<<<<<< HEAD
     if (nextProps.popupState.id != nextState.id) {
       this.setState({
         id: this.props.popupState.id,
@@ -48,23 +36,12 @@ class Pop extends React.Component {
         datel: this.props.popupState.datel,
         note: this.props.popupState.notes,
         done: this.props.popupState.done,
-=======
-    if(nextProps.popupState.id!=nextState.id){
-      this.setState({
-        id: this.props.popupState.id,
-        task:this.props.popupState.task,
-        datef:this.props.popupState.datef,
-        datel:this.props.popupState.datel,
-        notes:this.props.popupState.notes,
-        done:this.props.popupState.done
->>>>>>> 2fd7e1beed68e72783417835ca38e1eb96fb9163
       });
     }
 
 
     return true
   }
-<<<<<<< HEAD
   callApi() {
     // Github fetch library : https://github.com/github/fetch
     // Call the API page
@@ -77,21 +54,6 @@ class Pop extends React.Component {
         // Do something with the result
         console.log(jsonResult);
       })
-=======
-
-  callApi(){
-    // Github fetch library : https://github.com/github/fetch
-    // Call the API page
-    fetch('https://www.reddit.com/r/reactjs.json')
-    .then((result) => {
-      // Get the result
-      // If we want text, call result.text()
-      return result.json();
-    }).then((jsonResult) => {
-      // Do something with the result
-      console.log(jsonResult);
-    })
->>>>>>> 2fd7e1beed68e72783417835ca38e1eb96fb9163
   }
 
   toggle() {

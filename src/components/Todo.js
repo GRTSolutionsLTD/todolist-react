@@ -2,7 +2,7 @@ import React from 'react'
 import todos from '../reducers/todos';
 import { Table, Button } from 'reactstrap';
 
-const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, showPopup, savePopup, deleteClick }) =>
+const Todo = ({showDelete, onClick, done, id, task, datef, datel, notes, showPopup, deleteClick }) =>
   <tr >
     <td className="c-todo__list_item">
       <span>

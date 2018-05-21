@@ -1,8 +1,7 @@
 import React from 'react'
 import todos from '../reducers/todos';
 import { Table, Button } from 'reactstrap';
-// const TodoNotDone = ({ done,id, task, datef, datel, notes,deleteClick }) =>
-const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, savePopup, show, UpdateModal, deleteClick }) =>
+const TodoNotDone = ({ onClick,id, done, task, datef, datel, notes, showPopup, savePopup, UpdateModal, deleteClick }) =>
   <tr>
     <td className="c-todo__list_item">
       <span>
