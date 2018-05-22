@@ -12,6 +12,20 @@ export const addTodo = st => {
     notes: st.inputNotes
   }
 }
+export const onLoad = () => (
+  dispatch => {
+    fetch('http://localhost:3000/data/')
+      .then(response => response.json()
+        .then(section => {
+          console.log(section)
+          dispatch({
+            type: types.LOAD_TODO,
+            data: section
+          })
+        }));
+  });
+
+
 
 export const setVisibilityFilter = filter => {
   return {

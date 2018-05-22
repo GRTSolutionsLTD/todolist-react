@@ -1,4 +1,4 @@
-import data from '../actions/TodoList.json';
+// import data from '../actions/TodoList.json';
 import _ from 'lodash'
 
 const todo = (state = {}, action) => {
@@ -38,6 +38,8 @@ const todo = (state = {}, action) => {
       {
         return state
       }
+    case 'LOAD_TODO':
+      return state
     case 'UPDATE_POPUP': {
       _.setWith(state, action.State.id, action.State, state);
 
@@ -53,7 +55,7 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = data, action) => {
+const todos = (state = { data: [] }, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, todo(undefined, action)]
@@ -65,6 +67,8 @@ const todos = (state = data, action) => {
       return todo(state)
     case 'UPDATE_POPUP':
       return todo(state, action)
+    case 'LOAD_TODO':
+      return todo(action.data, action);
     default:
       return state
   }

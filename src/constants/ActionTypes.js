@@ -4,6 +4,6 @@ export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const DELETE_TODO = 'DELETE_TODO'
 export const TOGGLESHOW_TODO = 'TOGGLESHOW_TODO'
 export const TOGGLE_TODONUM = 'TOGGLE_TODONUM'
-
+export const LOAD_TODO = 'LOAD_TODO';
 
 
