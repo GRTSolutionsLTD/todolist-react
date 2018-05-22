@@ -39,7 +39,10 @@ const todo = (state = {}, action) => {
         return state
       }
     case 'LOAD_TODO':
+    {
+     
       return state
+     }
     case 'UPDATE_POPUP': {
       _.setWith(state, action.State.id, action.State, state);
 

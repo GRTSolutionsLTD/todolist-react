@@ -1,5 +1,5 @@
 
-
+import * as types from '../constants/ActionTypes'
 
 export const showPopUp = (isVisible,id) =>{
   return{
@@ -14,6 +14,18 @@ export const savePopUp = isVisible => {
   isVisible
   }
 }
+export const onLoad2 = () => (
+  dispatch => {
+    fetch('http://localhost:3000/data/')
+      .then(response => response.json()
+        .then(section => {
+          console.log(section)
+          dispatch({
+            type: types.LOAD_TODO2,
+            data: section
+          })
+        }));
+  });
 
 export const UpdatePopUp = State => {
   return{

@@ -24,10 +24,11 @@ import TodoShowNum from '../components/TodoShowNum'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { onLoad } from '../actions/todoActions';
-
+import { onLoad2 } from '../actions/popupActions';
 class HomePage extends Component {
   componentWillMount() {
     this.props.onLoad();
+    this.props.onLoad2();
   }
   render() {
     // console.log(this)
@@ -53,6 +54,7 @@ function mapStateToProps(store, ownProps) {
 function mapDispatchToProps(dispatch) {
   return {
     onLoad: () => dispatch(onLoad()),
+    onLoad2: () => dispatch(onLoad2()),
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

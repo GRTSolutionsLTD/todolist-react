@@ -1,16 +1,17 @@
 
-import data from '../actions/TodoList.json';
+// import data from '../actions/TodoList.json';
+import todos from '../reducers/todos'
 import _ from 'lodash'
-const initialState = {
-    show: false,
-    showModal: false,
-    id:"",
-    task: "",
-    datef: "",
-    datel: "",
-    notes: ""
-}
-const popupReducer = (state = data, action) => {
+// const initialState = {
+//     show: false,
+//     showModal: false,
+//     id:"",
+//     task: "",
+//     datef: "",
+//     datel: "",
+//     notes: ""
+// }
+const popupReducer = (state = { data: [] }, action) => {
     switch (action.type) {
         case 'SHOW_POPUP':
             return Object.assign({}, state, {
@@ -20,18 +21,16 @@ const popupReducer = (state = data, action) => {
                 datef: state[action.id].datef,
                 datel: state[action.id].datel,
                 notes: state[action.id].notes,
-                id:state[action.id].id,
-                done:state[action.id].done,
+                id: state[action.id].id,
+                done: state[action.id].done,
             })
         case 'SAVE_POPUP':
             return Object.assign({}, state, {
                 showModal: false
             })
-    
-        case 'TODO':{
-
-        }
-        case 'UPDATE_POPUP':{
+        case 'LOAD_TODO2':
+            return action.data;
+        case 'UPDATE_POPUP': {
             debugger;
             return Object.assign({}, state, {
                 done: true
@@ -42,7 +41,7 @@ const popupReducer = (state = data, action) => {
                 showModal: true
             })
         default:
-            return Object.assign({}, state, initialState)
+            return Object.assign({}, state)
 
     }
 }
