@@ -6,6 +6,10 @@ export const TOGGLESHOW_TODO = 'TOGGLESHOW_TODO'
 export const TOGGLE_TODONUM = 'TOGGLE_TODONUM'
 export const LOAD_TODO = 'LOAD_TODO';
 export const LOAD_TODO2 = 'LOAD_TODO2';
+export const SHOW_CAROUSEL = 'SHOW_CAROUSEL';
+export const CLOSE_CAROUSEL = 'CLOSE_CAROUSEL';
+
+
 
 
 

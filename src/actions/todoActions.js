@@ -25,7 +25,17 @@ export const onLoad = () => (
         }));
   });
 
-
+export const onPut = person => (
+  dispatch => {
+    let content = { id: nextTodoId++, task: person.inputTask, done: false, datef: person.inputDatef, datel: person.inputDatel, notes: person.inputNotes };
+    fetch('http://localhost:3000/data/', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(content)
+    })
+  });
 
 export const setVisibilityFilter = filter => {
   return {
@@ -51,8 +61,11 @@ export const toggleShowTodo = () => ({
 })
 
 export const deleteTodo = id => {
-  return {
-    type: types.DELETE_TODO,
-    id
-  }
+  return (dispatch) => {
+    fetch(('http://localhost:3000/data/' + id), {
+      method: "DELETE",
+      body: JSON.stringify(id),
+    })
+  };
 }
+
