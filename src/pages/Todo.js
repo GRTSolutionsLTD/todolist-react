@@ -17,7 +17,7 @@ const TodoPage = () => [
     <h3 className="p-todo__title">Todo List</h3>
     <h6>Tasks done</h6>
     <VisibleTodoList />
-    <h6>Tasks not  חחdone</h6>
+    <h6>Tasks not  ytyyyyuyuyudone</h6>
     <VisibleTodoNotDoneList/> 
     <Pop/>
   </main>
