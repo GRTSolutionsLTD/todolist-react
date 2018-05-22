@@ -6,6 +6,8 @@ import todos from './reducers/todos'
 import visibilityFilter from './reducers/visibilityFilter'
 import weatherReducer from './reducers/weatherReducer'
 import popupReducer  from './reducers/popupReducer'
+import CarouselReducer  from './reducers/CarouselReduser'
+
 
 export function configureStore(history, initialState) {
 
@@ -14,6 +16,7 @@ export function configureStore(history, initialState) {
         visibilityFilter,
         weatherReducer,
         popupReducer,
+        CarouselReducer,
         routing: routerReducer
     })
 

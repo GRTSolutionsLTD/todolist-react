@@ -41,7 +41,6 @@ export const Todo = State => {
   }
 }
 
-
 export const ShowModal = isVisible => {
   return{
   type: 'SHOW_MODAL',

@@ -24,19 +24,19 @@ export const onLoad = () => (
           })
         }));
   });
-export function deleteSetSuccess(id) {
-  return {
-    type: "DELETE_SET_SUCCESS",
-    id,
-  };
-}
+  export const setVisibilityFilter = filter => {
+    return {
+      type: types.SET_VISIBILITY_FILTER,
+      filter
+    }
+  }
 export function onDelete(id) {
   return (dispatch) => {
     fetch(('http://localhost:3000/data/' + id), {
       method: "DELETE",
       body: JSON.stringify(id),
     }).then(response => response)
-      .then(id => dispatch(deleteSetSuccess(id)));
+      
   };
 }
 // export function onAdd(id) {
@@ -73,28 +73,29 @@ export function onDelete(id) {
 //     console.log(obj)
 //   });
 // }
-export const onAdd=id=> (
-  (dispatch) => {
-  let reqBody={    
-  id: nextTodoId++,
-  task: id.inputTask,
-  done: false,
-  datef: id.inputDatef,
-  datel:id.inputDatel,
-  notes: id.inputNotes}
+export const onAdd = id => (
+  dispatch => {
+  let reqBody={id: nextTodoId++,task: id.inputTask,done: false,datef: id.inputDatef,datel:id.inputDatel,notes: id.inputNotes};
     fetch(('http://localhost:3000/data/'), {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body:JSON.stringify(reqBody)
       })
-  })
-
-  export const setVisibilityFilter = filter => {
-    return {
-      type: types.SET_VISIBILITY_FILTER,
-      filter
-    }
-  }
-
+  });
+  // export const onPut = person => (
+  //   dispatch => {
+  //     let content = { id: nextTodoId++, task: person.inputTask, done: false, datef: person.inputDatef, datel: person.inputDatel, notes: person.inputNotes };
+  //     fetch('http://localhost:3000/data/', {
+  //       method: 'post',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify(content)
+  //     })
+  //   });
+ 
   export const toggleTodo = id => {
     return {
       type: types.TOGGLE_TODO,
@@ -106,14 +107,7 @@ export const onAdd=id=> (
       type: types.TOGGLE_TODONUM,
     }
   }
-
   export const toggleShowTodo = () => ({
     type: types.TOGGLESHOW_TODO
   })
 
-  export const deleteTodo = id => {
-    return {
-      type: types.DELETE_TODO,
-      id
-    }
-  }
