@@ -29,6 +29,7 @@ const popupReducer = (state = data, action) => {
             })
     
         case 'TODO':{
+
         }
         case 'UPDATE_POPUP':{
             debugger;

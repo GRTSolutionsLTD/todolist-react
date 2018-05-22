@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -5,7 +7,6 @@ import { savePopUp, UpdatePopUp, Todo } from './../actions/popupActions'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Pop extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -36,24 +37,8 @@ class Pop extends React.Component {
         done: this.props.popupState.done,
       });
     }
-
-
     return true
   }
-  callApi() {
-    // Github fetch library : https://github.com/github/fetch
-    // Call the API page
-    fetch('https://www.reddit.com/r/reactjs.json')
-      .then((result) => {
-        // Get the result
-        // If we want text, call result.text()
-        return result.json();
-      }).then((jsonResult) => {
-        // Do something with the result
-        console.log(jsonResult);
-      })
-  }
-
   toggle() {
     this.props.dispatch(savePopUp(false));
     this.props.dispatch(UpdatePopUp(this.state));
@@ -120,8 +105,6 @@ class Pop extends React.Component {
     );
   }
 }
-
-
 Pop = connect(state => ({
   popupState: state.popupReducer
 })
