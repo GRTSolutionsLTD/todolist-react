@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions/todoActions'
+import { addTodo,onAdd } from '../actions/todoActions'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class AddTodo extends React.Component {
   constructor(props) {
@@ -40,7 +40,8 @@ class AddTodo extends React.Component {
     if (!inputTask.trim()&&!inputDatef.trim()&&!inputDatel.trim()&&!inputNotes.trim()) {
       return
     }
-    dispatch(addTodo(this.state))
+   dispatch(onAdd(this.state))
+    // dispatch(addTodo(this.state))
     this.setState({ inputTask: '',inputDatef:'',inputDatel:'',inputNotes:'' })
   }
 
