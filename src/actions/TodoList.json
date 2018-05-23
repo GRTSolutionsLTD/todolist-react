@@ -1,6 +1,22 @@
 {
   "data": [
     {
+<<<<<<< HEAD
+      "id": 4,
+      "task": "sd",
+      "done": false,
+      "datef": "as",
+      "datel": "s",
+      "notes": "s"
+    },
+    {
+      "id": 2,
+      "task": "fd",
+      "done": false,
+      "datef": "rteyt",
+      "datel": "trsu",
+      "notes": "sutr"
+=======
       "id": "1",
       "task": "rrrrrr",
       "datef": "Fri Mar 03 1989 17:32:15 GMT+0200 (Eastern Europe Standard Time)",
@@ -21,6 +37,7 @@
       "datel": "Wed Apr 17 1991 22:39:14 GMT+0300 (Eastern Europe Daylight Time)",
       "note": "Johnston",
       "done": true
+>>>>>>> a599ac7bae717258173ea97b431809f9b274d61e
     }
   ]
 }

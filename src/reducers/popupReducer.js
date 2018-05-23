@@ -14,15 +14,16 @@ import _ from 'lodash'
 const popupReducer = (state = { data: [] }, action) => {
     switch (action.type) {
         case 'SHOW_POPUP':
+        var st=_.filter(state, function(o) { return o.id==action.id; })[0];
             return Object.assign({}, state, {
                 show: true,
                 showModal: true,
-                task: state[action.id].task,
-                datef: state[action.id].datef,
-                datel: state[action.id].datel,
-                notes: state[action.id].notes,
-                id: state[action.id].id,
-                done: state[action.id].done,
+                task: st.task,
+                datef: st.datef,
+                datel: st.datel,
+                notes: st.notes,
+                id: st.id,
+                done:st.done,
             })
         case 'SAVE_POPUP':
             return Object.assign({}, state, {
