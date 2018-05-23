@@ -1,6 +1,7 @@
 {
   "data": [
     {
+<<<<<<< HEAD
       "id": 4,
       "task": "sd",
       "done": false,
@@ -15,6 +16,28 @@
       "datef": "rteyt",
       "datel": "trsu",
       "notes": "sutr"
+=======
+      "id": "1",
+      "task": "rrrrrr",
+      "datef": "Fri Mar 03 1989 17:32:15 GMT+0200 (Eastern Europe Standard Time)",
+      "datel": "Wed Apr 17 1991 22:39:14 GMT+0300 (Eastern Europe Daylight Time)",
+      "done": false
+    },
+    {
+      "id": "2",
+      "task": "uuuuuuuu",
+      "datef": "Fri Mar 03 1989 17:32:15 GMT+0200 (Eastern Europe Standard Time)",
+      "datel": "Wed Apr 17 1991 22:39:14 GMT+0300 (Eastern Europe Daylight Time)",
+      "done": false
+    },
+    {
+      "id": "3",
+      "task": "meirav",
+      "datef": "Fri Mar 03 1989 17:32:15 GMT+0200 (Eastern Europe Standard Time)",
+      "datel": "Wed Apr 17 1991 22:39:14 GMT+0300 (Eastern Europe Daylight Time)",
+      "note": "Johnston",
+      "done": true
+>>>>>>> a599ac7bae717258173ea97b431809f9b274d61e
     }
   ]
 }

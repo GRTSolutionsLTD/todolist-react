@@ -1,5 +1,6 @@
 
 import * as types from '../constants/ActionTypes'
+import * as axios from 'axios';
 
 export const showPopUp = (isVisible,id) =>{
   return{
@@ -27,12 +28,22 @@ export const onLoad2 = () => (
         }));
   });
 
-export const UpdatePopUp = State => {
-  return{
-  type: 'UPDATE_POPUP',
-  State
+export const UpdatePopUp=(todo) => (
+  dispatch => {
+      return axios.put('http://localhost:3000/data/'+todo.id,todo)
+          .then(res => {
+              console.log("res:  "+res)
+              dispatch({ type:types.UPDATE_POPUP, payload: res })
+          })
+          .catch(err => {
+              console.log("error");
+          }
+      )
   }
-}
+)
+
+
+
 
 export const Todo = State => {
   return{
