@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import TimerExample from '../containers/Timer'
 
 const Navigation = ({ className, buttonClassName }) =>
   <nav className={className}>
@@ -15,6 +16,7 @@ const Navigation = ({ className, buttonClassName }) =>
     <Link className={buttonClassName} to="Add">
       Add to do
     </Link>
+    <TimerExample start={Date.now()} />
   </nav>
 
 Navigation.defaultProps = {

@@ -15,7 +15,6 @@ class HomePage extends Component {
   }
   componentWillMount() {
     this.props.onLoad();
-   // this.props.onPut();
     this.props.onLoad2();
   }
   Open() {
@@ -24,7 +23,7 @@ class HomePage extends Component {
   render() {
     // console.log(this)
     return (
-      <div>
+      <div className="background-Image">
         <main className="p-home">
           {/* <h3 className="p-home__title">{content.title}</h3> */}
           <h3 className="p-home__article">the number of task is</h3>

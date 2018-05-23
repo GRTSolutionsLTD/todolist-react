@@ -1,3 +1,7 @@
 @mixin my-border() {
 	border: solid 1px red;
   }
+
+@mixin colorGreen() {
+    color:  aquamarine;
+  }
