@@ -1,6 +1,9 @@
 // import data from '../actions/TodoList.json';
 import _ from 'lodash'
-
+// function update(state, payload) {
+//   // console.log(state, payload)
+//   return state.id !== payload.id ? state : payload;
+// }
 const todo = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -41,14 +44,20 @@ const todo = (state = {}, action) => {
        {
         // data: [...state.data, action.payload]
         return state;
-       }        
-
-    case 'UPDATE_POPUP':
-      {
-        debugger;
-        _.setWith(state, '[' + action.State.id + ']' + '.done', true, state);
-        return _.setWith(state, '[' + action.State.id + ']', action.State, state);
-      }
+       }    
+       case 'UPDATE_POPUP':
+       {    
+    //    return {
+    //     data: [...state.data.map((state) => update(state, action.payload))],
+    //     FilterList: [...state.FilterList.map((state) => update(state, action.payload))]
+    // };
+  }
+    // case 'UPDATE_POPUP':
+    //   {
+        
+    //     _.setWith(state, '[' + action.todo.id + ']' + '.done', true, state);
+    //     return _.setWith(state, '[' + action.todo.id + ']', action.todo, state);
+    //   }
     case 'TOGGLESHOW_TODO':
       {
         return state
@@ -58,12 +67,6 @@ const todo = (state = {}, action) => {
      
       return state
      }
-    case 'UPDATE_POPUP': {
-      _.setWith(state, action.State.id, action.State, state);
-
-      return state
-
-    }
       return Object.assign({}, state, {
         done: !state.done
       })

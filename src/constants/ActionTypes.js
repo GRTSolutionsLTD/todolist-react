@@ -10,7 +10,7 @@ export const LOAD_TODO2 = 'LOAD_TODO2';
 export const ADD_SET_SUCCESS = 'ADD_SET_SUCCESS';
 export const SHOW_CAROUSEL = 'SHOW_CAROUSEL';
 export const CLOSE_CAROUSEL = 'CLOSE_CAROUSEL';
-
+export const UPDATE_POPUP = 'UPDATE_POPUP';
 
 
 
