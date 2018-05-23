@@ -28,6 +28,21 @@ const todo = (state = {}, action) => {
         _.remove(state, { id: action.id });
         return state;
       }
+      case 'DELETE_TODO1':
+      {
+        // _.remove(state, { id: action.id });
+        return state;
+      }
+     case "DELETE_SET_SUCCESS":
+     {
+        return action.id;
+     }
+      case "ADD_SET_SUCCESS":
+       {
+        // data: [...state.data, action.payload]
+        return state;
+       }        
+
     case 'UPDATE_POPUP':
       {
         debugger;
@@ -66,15 +81,23 @@ const todos = (state = { data: [] }, action) => {
       return state.map(t => todo(t, action))
     case 'DELETE_TODO':
       return todo(state, action)
+      case 'DELETE_TODO1':
+      return todo(state, action)
     case 'TOGGLESHOW_TODO':
       return todo(state)
     case 'UPDATE_POPUP':
       return todo(state, action)
     case 'LOAD_TODO':
       return todo(action.data, action);
+      case 'DELETE_SET_SUCCESS':
+      return todo(state = '', action);
+        case 'ADD_SET_SUCCESS':
+        return todo(state , action);
     default:
       return state
   }
 }
 
 export default todos
+
+       

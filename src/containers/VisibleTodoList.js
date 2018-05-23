@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleTodo, deleteTodo } from '../actions/todoActions'
+import { toggleTodo, deleteTodo ,onDelete } from '../actions/todoActions'
 import { savePopUp, showPopUp } from '../actions/popupActions'
 import TodoList from '../components/TodoList'
 
@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(toggleTodo(id))
     },
     onDeleteClick: id => {
-      dispatch(deleteTodo(id))
+      // dispatch(deleteTodo(id))
+      dispatch(onDelete(id))
     },
     onShowPopup: isVisible => {
       if (isVisible)

@@ -3,7 +3,7 @@ import TodoShowNum from '../components/TodoShowNum'
 import Carouselc from '../containers/CarouselC'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { onLoad,onPut } from '../actions/todoActions';
+import { onLoad } from '../actions/todoActions';
 import { onLoad2 } from '../actions/popupActions';
 import {Showcarousel} from '../actions/CarouselActions'
 import {Button } from 'reactstrap';
@@ -48,7 +48,7 @@ function mapStateToProps(store, ownProps) {
 function mapDispatchToProps(dispatch) {
   return {
     onLoad: () => dispatch(onLoad()),
-    onPut: () => dispatch(onPut()),
+    // onPut: () => dispatch(onPut()),
     onLoad2: () => dispatch(onLoad2()),
     Showcarousel:()=>dispatch(Showcarousel())
   };
