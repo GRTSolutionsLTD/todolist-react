@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { onLoad,onPut } from '../actions/todoActions';
 import { onLoad2 } from '../actions/popupActions';
 import {Showcarousel} from '../actions/CarouselActions'
+import {Button } from 'reactstrap';
 
 class HomePage extends Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class HomePage extends Component {
           <h3 className="p-home__article">the number of task is</h3>
           <br />
           <TodoShowNum />
-          <input type="button" value="לחץ" onClick={this.Open}/>
+          <br/>
+          <center><Button outline onClick={this.Open}>לחץ</Button></center>
         <Carouselc/>
         </main>
       </div>
